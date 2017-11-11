@@ -14,5 +14,13 @@ public class Student {
 	public String getPassword() {
 		return password;
 	}
+	public double getGPAX()
+	{
+		return GPAXCalculator.calGPAX(this.studentID);
+	}
+	public double getGPA(int semester, String year)
+	{
+		return GPAXCalculator.calGPA(this.studentID, semester, year);
+	}
 	
 }
