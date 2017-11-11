@@ -1,3 +1,4 @@
+package RegisterSystem;
 
 public class Student {
 	private String studentID;
@@ -7,4 +8,11 @@ public class Student {
 		this.studentID = studentID;
 		this.password = password;
 	}
+	public String getStudentID() {
+		return studentID;
+	}
+	public String getPassword() {
+		return password;
+	}
+	
 }
