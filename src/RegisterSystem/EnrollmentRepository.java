@@ -1,12 +1,13 @@
 package RegisterSystem;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class EnrollmentRepository {
-	private List<Enrollment> enrollments;
+	private static List<Enrollment> enrollments;
 
-	public void grading(Teaching teaching, String studentID, char grade) {
+	public static void grading(Teaching teaching, String studentID, char grade) {
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)
 					&& Objects.equals(enrollment.getCourseID(), teaching.getCourseID())
@@ -17,7 +18,7 @@ public class EnrollmentRepository {
 		}
 	}
 
-	public List<Enrollment> searchByStudentID(String studentID) {
+	public static List<Enrollment> searchByStudentID(String studentID) {
 		List<Enrollment> result = new ArrayList<Enrollment>();
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)) {
@@ -27,7 +28,7 @@ public class EnrollmentRepository {
 		return result;
 	}
 
-	public List<Enrollment> searchByIDSemesterAndYear(String studentID, int semester, String year) {
+	public static List<Enrollment> searchByIDSemesterAndYear(String studentID, int semester, String year) {
 		List<Enrollment> result = new ArrayList<Enrollment>();
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)
@@ -37,5 +38,29 @@ public class EnrollmentRepository {
 			}
 		}
 		return result;
+	}
+
+	public static void addEnrollment(Enrollment enrollment) {
+		enrollments.add(enrollment);
+	}
+
+	public static void deleteEnrollment(String studentID, String courseID) {
+		for (Enrollment enrollment : enrollments) {
+			if (Objects.equals(enrollment.getStudentID(), studentID)
+					&& Objects.equals(enrollment.getCourseID(), courseID)) {
+				enrollments.remove(enrollment);
+				return;
+			}
+		}
+	}
+	public static void editSection(String studentID, String courseID, int section)
+	{
+		for (Enrollment enrollment : enrollments) {
+			if (Objects.equals(enrollment.getStudentID(), studentID)
+					&& Objects.equals(enrollment.getCourseID(), courseID)) {
+				enrollment.setSection(section);
+				return;
+			}
+		}
 	}
 }
