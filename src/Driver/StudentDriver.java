@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import RegisterSystem.Student;
 
-class StudentDriver {
+class MaiDriver {
 
 	@Test
 	void testGetGPAX() {
