@@ -1,5 +1,5 @@
 package ClassDiagram.RegisterSystem;
-
+import Stub.*;
 import java.util.List;
 
 public class GPAXCalculator {
