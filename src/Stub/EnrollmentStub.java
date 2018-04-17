@@ -1,6 +1,6 @@
 package Stub;
 
-class EnrollmentStub {
+public class EnrollmentStub {
 	public EnrollmentStub(String studentID, String courseID, int section){
 		System.out.println(studentID);
 		System.out.println(courseID);
@@ -25,7 +25,7 @@ class EnrollmentStub {
 		return null;
 	}
 	public char getGrade(){
-		return '\u0000';
+		return 'A';
 	}
 	public void setGrade(char grade){
 		System.out.println(grade);
