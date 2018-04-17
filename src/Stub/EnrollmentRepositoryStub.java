@@ -9,7 +9,7 @@ public class EnrollmentRepositoryStub {
 		System.out.println(studentID);
 		System.out.println(grade);
 	}
-	public static List<Enrollment> searchByStudentID(String studentID){
+	public static Enrollment[] searchByStudentID(String studentID){
 		System.out.println(studentID);
 		return null;
 	}

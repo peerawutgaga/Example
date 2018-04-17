@@ -1,19 +1,14 @@
 package ClassDiagram.RegisterSystem;
 import Stub.*;
 import java.util.List;
+import java.util.Objects;
 
 public class GPAXCalculator {
 	public static double calGPAX(String studentID) {
 		double gpax = 0;
-//		List<Enrollment> enrollments = EnrollmentRepository.searchByStudentID(studentID);
-//		for (Enrollment enrollment : enrollments) {
-//			gpax += getGradeNumber(enrollment.getGrade());
-//		}
-//		return (gpax/enrollments.size());
-		List<Enrollment> enrollments = EnrollmentRepositoryStub.searchByStudentID(studentID);
-		EnrollmentStub e = new EnrollmentStub("5731083221", "2110499", 1);
-		for (int i = 0;i<5;i++) {
-			gpax += getGradeNumber(e.getGrade());
+		List<Enrollment> enrollments = EnrollmentRepository.searchByStudentID(studentID);
+		for (Enrollment enrollment : enrollments) {
+			gpax += getGradeNumber(enrollment.getGrade());
 		}
 		return (gpax/enrollments.size());
 	}
@@ -43,7 +38,5 @@ public class GPAXCalculator {
 		}
 		return 0;
 	}
-	public static void main(String args[]) {
-		System.out.println(calGPAX("1234"));
-	}
+
 }

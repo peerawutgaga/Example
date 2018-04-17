@@ -6,8 +6,11 @@ import java.util.Objects;
 
 public class EnrollmentRepository {
 	private static List<Enrollment> enrollments;
-
+	
 	public static void grading(Teaching teaching, String studentID, char grade) {
+		if(Objects.isNull(enrollments)) {
+			enrollments = new ArrayList<Enrollment>();
+		}
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)
 					&& Objects.equals(enrollment.getCourseID(), teaching.getCourseID())
@@ -19,6 +22,9 @@ public class EnrollmentRepository {
 	}
 
 	public static List<Enrollment> searchByStudentID(String studentID) {
+		if(Objects.isNull(enrollments)) {
+			enrollments = new ArrayList<Enrollment>();
+		}
 		List<Enrollment> result = new ArrayList<Enrollment>();
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)) {
@@ -29,6 +35,9 @@ public class EnrollmentRepository {
 	}
 
 	public static List<Enrollment> searchByIDSemesterAndYear(String studentID, int semester, String year) {
+		if(Objects.isNull(enrollments)) {
+			enrollments = new ArrayList<Enrollment>();
+		}
 		List<Enrollment> result = new ArrayList<Enrollment>();
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)
@@ -41,10 +50,16 @@ public class EnrollmentRepository {
 	}
 
 	public static void addEnrollment(Enrollment enrollment) {
+		if(Objects.isNull(enrollments)) {
+			enrollments = new ArrayList<Enrollment>();
+		}
 		enrollments.add(enrollment);
 	}
 
 	public static void deleteEnrollment(String studentID, String courseID) {
+		if(Objects.isNull(enrollments)) {
+			enrollments = new ArrayList<Enrollment>();
+		}
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)
 					&& Objects.equals(enrollment.getCourseID(), courseID)) {
@@ -55,6 +70,9 @@ public class EnrollmentRepository {
 	}
 	public static void editSection(String studentID, String courseID, int section)
 	{
+		if(Objects.isNull(enrollments)) {
+			enrollments = new ArrayList<Enrollment>();
+		}
 		for (Enrollment enrollment : enrollments) {
 			if (Objects.equals(enrollment.getStudentID(), studentID)
 					&& Objects.equals(enrollment.getCourseID(), courseID)) {
