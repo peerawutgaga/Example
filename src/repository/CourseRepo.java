@@ -32,15 +32,18 @@ public class CourseRepo implements Repository {
     }
 
     @Override
-    public void update(Object course, Object newCourse) {
-        if(course instanceof Course && newCourse instanceof Course){
-            this.courses.remove(course);
-            this.courses.add((Course) newCourse);
-        }
+    public void update(String courseID, Object newCourse) {
+
     }
 
     @Override
-    public void delete(Object course) {
-        this.courses.remove(course);
+    public void delete(String courseID) {
+        if(courseID instanceof String){
+            for(Course course: courses){
+                if(course.getCourseName().equals(courseID)){
+                    this.courses.remove(course);
+                }
+            }
+        }
     }
 }
