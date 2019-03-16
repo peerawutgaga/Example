@@ -19,10 +19,10 @@ public class Course {
         this.courseID = courseID;
         this.courseName = courseName;
         this.headLecturerID = headLecturerID;
-//        SectionInfo sectionInfo = new SectionInfo();
+        SectionInfo sectionInfo = new SectionInfo();
     }
     public void openSection(int sectionNo){
-
+      //  this.sectionInfos.se
     }
 
     public String getCourseID() {
