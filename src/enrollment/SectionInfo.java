@@ -43,13 +43,27 @@ public class SectionInfo {
             setBuilding(building);
             setRoom(room);
         }
+
+        public void setStartDate(String startDate) {
+            this.startDate = startDate;
+        }
+
+        public void setEndDate(String endDate) {
+            this.endDate = endDate;
+        }
+
+        public void setDay(String day) {
+            this.day = day;
+        }
     }
     public SectionInfo(){
         this.sectionDateTime = new SectionDateTime();
+        this.isOpen = true;
     }
     public SectionInfo(int sectionNo){
         this.sectionDateTime = new SectionDateTime();
         this.sectionNo = sectionNo;
+        this.isOpen = true;
     }
 
     public int getSectionNo() {
@@ -75,7 +89,13 @@ public class SectionInfo {
     public void setLecture(String lectureID) {
         this.lectureID.add(lectureID);
     }
-    public void setRoom(String bui){
-
+    public void setRoom(String building, String room){
+        this.sectionDateTime.setBuilding(building);
+        this.sectionDateTime.setRoom(room);
+    }
+    public void setDateAndTime(String day, String startDate, String endDate){
+        this.sectionDateTime.setDay(day);
+        this.sectionDateTime.setStartDate(startDate);
+        this.sectionDateTime.setEndDate(endDate);
     }
 }
