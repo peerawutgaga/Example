@@ -2,7 +2,7 @@ package enrollment;
 
 import repository.EnrollmentRepo;
 
-public class grader {
+public class Grader {
     public static double getGPA(String studentID, int semester, int year){
         EnrollmentRepo enrollmentRepo = EnrollmentRepo.getInstance();
         return 0;

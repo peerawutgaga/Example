@@ -1,5 +1,9 @@
 package stub.repository;
 
-public class CourseRepoStub {
+import enrollment.Course;
 
+public class CourseRepoStub {
+    public void insert(Course course){
+        System.out.println(course);
+    }
 }
