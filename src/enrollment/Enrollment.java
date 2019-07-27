@@ -6,6 +6,7 @@ public class Enrollment {
     private String studentID;
     private int semester;
     private int year;
+    private Score score;
     public Enrollment(String studentID,Course course){
         this.studentID = studentID;
         this.course = course;
@@ -45,5 +46,11 @@ public class Enrollment {
 
     public void setYear(int year) {
         this.year = year;
+    }
+    public double getScore(){
+        return score.getScore();
+    }
+    public String getGrade(){
+        return score.getGrade();
     }
 }
