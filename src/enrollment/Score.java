@@ -1,10 +1,12 @@
 package enrollment;
 
 public class Score {
+    private double score;
+    private String gradeLetter;
     public double getScore(){
-        return 0.0;
+        return this.score;
     }
     public String getGrade(){
-        return "A";
+        return this.gradeLetter;
     }
 }
