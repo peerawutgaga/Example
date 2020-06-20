@@ -9,4 +9,7 @@ public class Score {
     public String getGrade(){
         return this.gradeLetter;
     }
+    public void setGrade(String gradeLetter){
+        this.gradeLetter = gradeLetter;
+    }
 }

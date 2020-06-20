@@ -6,6 +6,9 @@ public class Enrollment {
     private String studentID;
     private int semester;
     private int year;
+
+
+
     private Score score;
     public Enrollment(String studentID,Course course){
         this.studentID = studentID;
@@ -53,4 +56,8 @@ public class Enrollment {
     public String getGrade(){
         return score.getGrade();
     }
+    public void setScore(Score score) {
+        this.score = score;
+    }
+
 }

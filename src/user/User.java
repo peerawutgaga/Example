@@ -18,4 +18,7 @@ public class User {
         //Verify password
         return true;
     }
+    public void setId(String id){
+        this.id = id;
+    }
 }

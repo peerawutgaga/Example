@@ -1,13 +1,24 @@
 package driver.enrollment;
+/*--- AUTO IMPORT START HERE ---*/
+import enrollment.Enrollment;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;;
+import repository.EnrollmentRepo;
 
-        import enrollment.Grader;
-        import org.junit.Assert;
-        import org.junit.Test;
+import java.util.List;
 
-public class GraderDriver {
+/*--- AUTO IMPORT END HERE ---*/
+public class GraderDriver{
     @Test
-    public void testGetGPAX(){
-        double returnValue = Grader.getGPAX("1233264");//Random Value
-        Assert.assertEquals(3.00,returnValue,0.1);//Random Value
+    public void testSelectInEnrollmentRepo(){
+        EnrollmentRepo enrollmentRepo = new EnrollmentRepo();
+        List<Enrollment> actualResult = enrollmentRepo.select("0PGF");
+        assertEquals(null,actualResult);
+    }
+    @Test
+    public void testSelectInEnrollmentRepo1(){
+        EnrollmentRepo enrollmentRepo = new EnrollmentRepo();
+        List<Enrollment> actualResult = enrollmentRepo.select("qS4Lfs2",2000820023,183935084);
+        assertEquals(null,actualResult);
     }
 }
